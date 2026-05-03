@@ -18,9 +18,7 @@ class AudioListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: downloadStatus == DownloadStatus.downloaded ? onPlay : onDownload,
-      child: Padding(
+    return Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -43,11 +41,13 @@ class AudioListItem extends StatelessWidget {
             ),
             const SizedBox(width: 16),
             // ── 右側：操作按鈕 + 日期 ──
-            _buildRight(),
+            InkWell(
+              onTap: downloadStatus == DownloadStatus.downloaded ? onPlay : onDownload,
+              child: _buildRight(),
+            ),
           ],
         ),
-      ),
-    );
+      );
   }
 
   Widget _buildRight() {
