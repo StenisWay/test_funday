@@ -15,9 +15,9 @@ export 'audio_list_state.dart';
 // DI 鏈（Providers）
 // ─────────────────────────────────────────
 
-/// API 用 Dio（一般 timeout）
+/// API 用 Dio（baseUrl 交由 AudioApiClient 的 @RestApi 管理）
 final audioDioProvider = Provider<Dio>((ref) {
-  return DioClient.create(baseUrl: 'https://www.travel.taipei/open-api/');
+  return DioClient.create();
 });
 
 /// Retrofit API Client

@@ -4,7 +4,7 @@ class DioClient {
   DioClient._();
 
   static Dio create({
-    required String baseUrl,
+    String baseUrl = '',
     Duration connectTimeout = const Duration(seconds: 30),
     Duration receiveTimeout = const Duration(seconds: 60),
     List<Interceptor> interceptors = const [],
